@@ -1,10 +1,10 @@
 # question_spreadsheet
 
-1. Google Driveのフォルダにシートを追加したいSpreadsheetファイルを置く。
+1. Google Driveのフォルダにシートを追加したいSpreadsheetファイルをまとめて置く。
 
-2. 追加したいシートを開く
+2. フォルダに置いたSpreadsheetファイル達に追加したいシートを開く。
 
-3. 拡張機能 → Apps Scriptを選択
+3. 拡張機能 → Apps Scriptを選択。
 
 4. 開いたページに下のコードをコピーして貼り付けし、保存する
 
