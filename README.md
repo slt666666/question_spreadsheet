@@ -1,6 +1,6 @@
 # question_spreadsheet
 
-1. Google Driveのフォルダにシートを追加したいSpreadsheetファイルをまとめて置く。
+1. Google Driveのフォルダにシートを追加したいSpreadsheetファイルをまとめて置いておく。
 
 2. フォルダに置いたSpreadsheetファイル達に追加したいシートを開く。
 
