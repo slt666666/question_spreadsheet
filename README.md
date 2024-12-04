@@ -13,7 +13,7 @@ function sheetCopyAnotherFile() {
   try {
     SpreadsheetApp.getActiveSpreadsheet()
     var folder_name = Browser.inputBox("Google DriveのフォルダURLを入れてください");
-    var folder_id = folder_name.replace("https://drive.google.com/drive/u/0/folders/", "");
+    var folder_id = folder_name.slice(-33);
 
     folder = DriveApp.getFolderById(folder_id);
     files = folder.getFiles();
@@ -24,13 +24,19 @@ function sheetCopyAnotherFile() {
       return;
     }
 
+    let newcopysheet = Browser.inputBox("コピー先でどんなシート名にしたいかを入力してください。\\n例：新シート1など。");
+    if(newcopysheet == "cancel"){
+      Browser.msgBox("実行をキャンセルします。");
+      return;
+    }
+
     while (files.hasNext()) {
       var buff = files.next();
       ss = SpreadsheetApp.getActive();
       sheet = ss.getSheetByName(copysheet);
       destSpreadsheet = SpreadsheetApp.openByUrl(buff.getUrl());
       newCopySheet = sheet.copyTo(destSpreadsheet);
-      newCopySheet.setName(copysheet + '_copy');
+      newCopySheet.setName(newcopysheet);
     }
 
   } catch (e) {
