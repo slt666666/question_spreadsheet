@@ -49,7 +49,7 @@ function deleteAllSheet() {
   try {
     SpreadsheetApp.getActiveSpreadsheet()
     var folder_name = Browser.inputBox("Google DriveのフォルダURLを入れてください");
-    var folder_id = folder_name.replace("https://drive.google.com/drive/u/0/folders/", "");
+    var folder_id = folder_name.slice(-33);
 
     folder = DriveApp.getFolderById(folder_id);
     files = folder.getFiles();
